@@ -32,8 +32,19 @@
             - ECMA Script (ES) 
                 ES5, ES6, ES7
 
+    Exercise: Reverse a string
+        var name = "Puneet"
+        function to reverse the string
+        output --> "teenUp"
+
+        capitalize the first letter of a sentence
+        "its a rainy Evening here in DELhi"
+        -->
+        "Its a rainy evening here in delhi"
 
         JQuery
 
         Angular 5
             Typescript
+
+
