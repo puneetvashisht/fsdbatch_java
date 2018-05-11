@@ -51,4 +51,18 @@
         1. NodeJS installed
         2. npm install -g http-server
 
+    Promise based Ajax API's
+        1. Fetch (HTML 5 feature supported by all new browsers)
+        2. $.ajax (jquery library and will run on all the browsers)
+
+    JQuery: It is a library of common reusable functions in Javascript
+
+    Assignment 1: Load and HTML table using Ajax. Use the employees.json. Table contains following columns
+    "id"
+    "first_name"
+    "last_name"
+    "email"
+    "gender"
+    "ip_address"
+
 
