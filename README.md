@@ -46,5 +46,9 @@
 
         Angular 5
             Typescript
+    
+    Steps to install http-server
+        1. NodeJS installed
+        2. npm install -g http-server
 
 

@@ -95,8 +95,13 @@ function thirdPartyFunction(){
 }
 
 console.log('Starting')
-thirdPartyFunction().then(function(result){
+thirdPartyFunction()
+.then(function(result){
     console.log(result)
+    return "1"
+})
+.then(function(x){
+    console.log(x)
 })
 console.log('End')
 
