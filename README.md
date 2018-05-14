@@ -66,3 +66,20 @@
     "ip_address"
 
 
+    Writing more and more Javascript is essential to utlize client's (mobile/desktop) resources
+
+    Javascript makes our code cubersome, not easy to maintain. For even small things we need to write a lot of Javascipt
+
+    Is there a solution?
+
+    Frameworks come to rescue, Angular, React, Ember...
+
+    For a dynamic UI, what is your preference
+    1. Javascript: Low level programming language.
+    2. JQuery: Gives you the commonly used functions, but still its a small library.
+    3. Angular: Framework, where its gives you everything needed go create a dynamic UI.
+
+    Assignment 2. Create a clock that ticks every 1 second using JQuery
+
+
+
