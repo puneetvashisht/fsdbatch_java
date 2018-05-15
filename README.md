@@ -81,5 +81,7 @@
 
     Assignment 2. Create a clock that ticks every 1 second using JQuery
 
+    Assignment 3. Practice grid layout and test for different resolution
+
 
 
