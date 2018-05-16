@@ -85,3 +85,35 @@
 
 
 
+
+    Why Angular??
+
+    Steps for creating first angular project using CLI
+
+    1. Check node installation : node -v & npm -v
+    2. install as a package angular-cli: npm install -g @angular/cli
+        - Angular Cli is command line tool for getting a dummy/scaffolding project
+    3. ng new your-project-name
+    -- unfinished.. boz of error on my machine
+
+
+    Steps to manually create Angular project without CLI
+
+    1. npm init to create package.json(contain depedencies)
+    2. npm install -- install dependencies in package.json
+    3. Create 3 files
+        a. main.ts -- To bootstrap or start the project
+        b. app.module.ts -- To wrap everything in a package
+        c. app.component.ts -- Component a unit in Angular
+    4. Transcompile
+        a. tsc -w
+        b. tsconfig.json -- config file for transcompile instructions
+    5. index.html --> html page and contains scripts to dynamically load .js files using SystemJS (library to dynamically load JS files)
+    6. systemjs.config.js (configuration for  SystemJS library to load all the files)
+
+
+    Android -> Playstore to install other apps
+    Node -> Npm to install other package/libs
+
+
+
