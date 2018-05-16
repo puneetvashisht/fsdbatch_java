@@ -115,5 +115,11 @@
     Android -> Playstore to install other apps
     Node -> Npm to install other package/libs
 
+    How do you run this setup
+
+    1. On command prompt go the directory cd "fsdbatch_java/01UILAYER/04angular/01firstangular"
+    2. npm install -> see node_modules in the directory
+    3. npm run compile, http-server
+
 
 
