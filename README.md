@@ -90,11 +90,17 @@
 
     Steps for creating first angular project using CLI
 
+    Visual Code plugin: Angular 5 and TypeScript/HTML VS Code Snippets by Dan Wahlin
+
+
     1. Check node installation : node -v & npm -v
     2. install as a package angular-cli: npm install -g @angular/cli
         - Angular Cli is command line tool for getting a dummy/scaffolding project
     3. ng new your-project-name
     -- unfinished.. boz of error on my machine
+    4. ng serve
+    5. ng g component feature/new-cmp
+    
 
 
     Steps to manually create Angular project without CLI
