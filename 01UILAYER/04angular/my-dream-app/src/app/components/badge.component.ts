@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
     selector: 'my-badge',
@@ -6,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BadgeComponent implements OnInit {
 
-    caption: string = "Default Caption"
-    count: number = 1
+    @Input('caption') caption: string = "Default Caption"
+    @Input('intialcount') count: number = 1
+
+    @Output('whenBadgeClicked') clicked : EventEmitter<string> = new EventEmitter<string>();
 
     incrementCount(){
         console.log('Here i want to increment the count')
         this.count = this.count+1
+        this.clicked.emit('' + this.count)
     }
 
     constructor() { }

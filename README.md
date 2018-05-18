@@ -128,4 +128,21 @@
     3. npm run compile, http-server
 
 
+    Typescript
+
+
+    Angular
+    
+        - Create Component
+        - Component is always part of a module
+        - Boostrap sequence --> Module -> One component
+        - Nested Component
+        - Data Bindings
+            - Interpolation {{ }}: Read a value from the class into the component
+            - Property Binding [ ]: Read as attributes into the component
+            - Event Binding () : Read it outside the component or component's output
+            - Two-way binding [( )]
+
+
+
 

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'ChangedValue';
+  initCount: number = 23;
+  sentCount: string = "";
+
+  onClicked(value: string) {
+    console.log('Recieved value', value);
+    this.sentCount = value;
+}
 }
