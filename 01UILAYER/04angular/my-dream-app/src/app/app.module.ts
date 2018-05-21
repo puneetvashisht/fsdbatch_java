@@ -7,7 +7,9 @@ import {BadgeComponent} from './components/badge.component'
 import { OuterComponent } from './outer.component';
 import {ParentComponent} from './components/parent.component'
 import {ChildComponent} from './components/child.component'
-
+import {DropdownComponent} from './dropdown/dropdown.component'
+import { ButtonComponent } from './dropdown/button.component';
+import { ListItemComponent } from './dropdown/listitem.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,10 @@ import {ChildComponent} from './components/child.component'
     BadgeComponent,
     OuterComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    DropdownComponent,
+    ButtonComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule
