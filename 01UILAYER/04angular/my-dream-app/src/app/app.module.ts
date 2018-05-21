@@ -10,6 +10,7 @@ import {ChildComponent} from './components/child.component'
 import {DropdownComponent} from './dropdown/dropdown.component'
 import { ButtonComponent } from './dropdown/button.component';
 import { ListItemComponent } from './dropdown/listitem.component';
+import {TodoComponent} from './todo/todo.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { ListItemComponent } from './dropdown/listitem.component';
     ChildComponent,
     DropdownComponent,
     ButtonComponent,
-    ListItemComponent
+    ListItemComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule
