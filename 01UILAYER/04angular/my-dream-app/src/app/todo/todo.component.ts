@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {TodoService} from './todo.service'
 
+
+// Component should only contain methods that manipulate dom. Things like business logic, AJAX... have to be moved to Service class
 @Component({
     selector: 'my-todo',
     template: `
@@ -24,12 +26,19 @@ import {TodoService} from './todo.service'
 })
 export class TodoComponent implements OnInit {
 
-    private todos: Array<object>;
+    private todos;
        
-    constructor(public todoService: TodoService) { }
+    constructor(public todoService: TodoService) {
+        console.log('CONSTRUCTOR **')
+    }
 
     ngOnInit() { 
-        this.todos = this.todoService.getTodos();
+        console.log('ON INIT **')
+        this.todoService.getTodos()
+        .then((res) =>{
+            console.log('In the component' ,res);
+            this.todos = res;
+        })
     }
 
     getClassForItem(isDone: boolean){
@@ -50,7 +59,11 @@ export class TodoComponent implements OnInit {
     }
     
     addTodo(todo: string){
-        this.todoService.addTodo({text: todo});
+        this.todoService.addTodo({text: todo})
+        .then((res) =>{
+            console.log('In the component -- post' ,res);
+            this.todos = res;
+        })
     }
 
     removeTodo(index: number){

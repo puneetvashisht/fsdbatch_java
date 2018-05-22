@@ -11,19 +11,35 @@ export class TodoService {
 
     
     
-    todos : Array<object> = [{text: 'todo item 1', isDone: true}, {text: 'todo item 2', isDone: false}]; 
+    todos : Array<object> = [{text: 'todo item', isDone: true}, {text: 'todo item 2', isDone: false}]; 
     constructor(private http : HttpClient){
 
     }
 
     getTodos() {
         // get this todos from AJAX or localStorage
-        this.http.get('http://localhost:8080/test.json', httpOptions).toPromise().then(res=>console.log(res));
-        return this.todos;
+
+        // AJAX
+        return this.http.get('http://localhost:3000/todos', httpOptions)
+        .toPromise()
+
+        // Hard-Coded
+        // return new Promise((resolve, reject) => {
+        //     resolve(this.todos);
+        // })
+
+        // .then((res)=>{
+        //     console.log(res);
+        // });
+        // return this.todos;
     }
 
     addTodo(obj){
-        this.todos.push(obj);
+        // Hard-coded
+        // this.todos.push(obj);
+
+        return this.http.post('http://localhost:3000/todos', obj , httpOptions)
+        .toPromise()
     }
 
     removeTodo(index: number){
