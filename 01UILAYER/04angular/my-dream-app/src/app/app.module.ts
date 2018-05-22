@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MyBadgeComponent } from './feature/my-badge/my-badge.component';
@@ -25,7 +26,8 @@ import {TodoComponent} from './todo/todo.component'
     TodoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [OuterComponent]

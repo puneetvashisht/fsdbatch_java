@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TodoService} from './todo.service'
 
 @Component({
     selector: 'my-todo',
@@ -10,27 +11,52 @@ import { Component, OnInit } from '@angular/core';
             <hr/>
 
             <ul class="list-group">
-                <li class="list-group-item disabled" *ngFor="let todo of todos; let i = index"><span><p>{{todo.text}}</p><button class="btn btn-danger" (click)="removeTodo(i)">X</button></span></li>
-                <li class="list-group-item" *ngFor="let todo of todos; let i = index"><span><p>{{todo.text}}</p><button class="btn btn-danger" (click)="removeTodo(i)">X</button></span></li>
+                <li [ngClass]="getClassForItem(todo.isDone)" *ngFor="let todo of todos;let i = index">
+                        <span>
+                            <p [ngStyle]= "{'color': getColor(todo.isDone)}">{{todo.text}}</p>
+                            <button class="btn btn-danger" (click)="removeTodo(i)">X</button>
+                        </span>
+                    </li>
             </ul>
         <div>
-    `
+    `,
+    providers: [TodoService]
 })
 export class TodoComponent implements OnInit {
 
-    todos : Array<object> = [{text: 'todo item 1', isDone: true}, {text: 'todo item 2', isDone: false}];    
-    constructor() { }
+    private todos: Array<object>;
+       
+    constructor(public todoService: TodoService) { }
 
+    ngOnInit() { 
+        this.todos = this.todoService.getTodos();
+    }
+
+    getClassForItem(isDone: boolean){
+        if(isDone){
+            return "list-group-item disabled"
+        }
+        else{
+            return "list-group-item"
+        }
+    }
+    getColor(isDone: boolean){
+        if(isDone){
+            return "green"
+        }
+        else{
+            return "black"
+        }
+    }
+    
     addTodo(todo: string){
-        this.todos.push({text: todo});
+        this.todoService.addTodo({text: todo});
     }
 
     removeTodo(index: number){
-        this.todos.splice(index, 1)
+        this.todoService.removeTodo(index);
     }
 
-    ngOnInit() { 
-
-    }
+   
 
 }
