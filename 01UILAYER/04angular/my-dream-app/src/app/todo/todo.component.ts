@@ -20,6 +20,11 @@ import {TodoService} from './todo.service'
                         </span>
                     </li>
             </ul>
+
+            <div>
+                <button class="btn btn-success" (click) = "addTodo(todo.value)">Sync with the Server</button>
+
+            </div>
         <div>
     `,
     providers: [TodoService]
@@ -67,7 +72,11 @@ export class TodoComponent implements OnInit {
     }
 
     removeTodo(index: number){
-        this.todoService.removeTodo(index);
+        this.todoService.removeTodo(index)
+        .then((res) =>{
+            console.log('In the component -- remove' ,res);
+            this.todos = res;
+        })
     }
 
    

@@ -1,5 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { LOCAL_STORAGE, StorageService } from 'angular-webstorage-service';
+ 
+const STORAGE_KEY = "my-todos"
+
 const httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
@@ -11,8 +15,8 @@ export class TodoService {
 
     
     
-    todos : Array<object> = [{text: 'todo item', isDone: true}, {text: 'todo item 2', isDone: false}]; 
-    constructor(private http : HttpClient){
+    todos : Array<object> = []; 
+    constructor(private http : HttpClient, @Inject(LOCAL_STORAGE) private storage: StorageService){
 
     }
 
@@ -20,8 +24,13 @@ export class TodoService {
         // get this todos from AJAX or localStorage
 
         // AJAX
-        return this.http.get('http://localhost:3000/todos', httpOptions)
-        .toPromise()
+        // return this.http.get('http://localhost:3000/todos', httpOptions)
+        // .toPromise()
+
+        return new Promise((resolve, reject) => {
+            this.todos = this.storage.get(STORAGE_KEY) || []
+            resolve(this.todos)
+        })
 
         // Hard-Coded
         // return new Promise((resolve, reject) => {
@@ -38,12 +47,26 @@ export class TodoService {
         // Hard-coded
         // this.todos.push(obj);
 
-        return this.http.post('http://localhost:3000/todos', obj , httpOptions)
-        .toPromise()
+        return new Promise((resolve, reject) => {
+            this.todos.push(obj)
+            // Auto stringyfies the object
+            this.storage.set(STORAGE_KEY, this.todos);
+            resolve(this.todos)
+        })
+
+       
+
+        // return this.http.post('http://localhost:3000/todos', obj , httpOptions)
+        // .toPromise()
     }
 
     removeTodo(index: number){
-        this.todos.splice(index, 1)
+        return new Promise((resolve, reject) => {
+            this.todos = this.storage.get(STORAGE_KEY)
+            this.todos.splice(index, 1);
+            this.storage.set(STORAGE_KEY, this.todos)
+            resolve(this.todos)
+        })
     }
 
 

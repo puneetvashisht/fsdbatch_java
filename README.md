@@ -144,5 +144,12 @@
             - Two-way binding [( )]
 
 
+        Localstorage to work
+            1. Install a library:  npm install --save angular-webstorage-service
+            2. Import the module for the library
+            3. Dependency Inject the StorageService to set and get values
+            4. Change from Session storage(temprorary, close d tab) -> LocalStorage
+
+
 
 
