@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TodoService} from './todo.service'
+import {TodooService} from './todoo.service'
 
 
 // Component should only contain methods that manipulate dom. Things like business logic, AJAX... have to be moved to Service class
@@ -22,18 +22,22 @@ import {TodoService} from './todo.service'
             </ul>
 
             <div>
-                <button class="btn btn-success" (click) = "addTodo(todo.value)">Sync with the Server</button>
+
+                <strong>{{message}}</strong>
+                <button class="btn btn-success" (click) = "synch()">Sync with the Server</button>
+                <button class="btn btn-success" (click) = "fetchTodos()">Load from the Server</button>
 
             </div>
         <div>
     `,
-    providers: [TodoService]
+    providers: [TodooService]
 })
 export class TodoComponent implements OnInit {
 
     private todos;
+    private message: string = ""
        
-    constructor(public todoService: TodoService) {
+    constructor(public todoService: TodooService) {
         console.log('CONSTRUCTOR **')
     }
 
@@ -61,6 +65,33 @@ export class TodoComponent implements OnInit {
         else{
             return "black"
         }
+    }
+
+    fetchTodos(){
+        this.todoService.fetchTodos()
+        .subscribe((res) => {
+            console.log(res)
+            this.todos = res;
+        })
+        // .then((res) =>{
+        //     console.log('In the component' ,res);
+        //     this.todos = res;
+        //     this.message = "Fetched Successfully!!"
+        // })
+    }
+
+    synch(){
+        this.todoService.synchTodo(this.todos)
+        .subscribe((res) => {
+            this.message = "Successfully updated!!"
+            console.log('In the component -- synch' ,res);
+            // this.todos = res;
+        })
+        // .then((res) =>{
+        //    this.message = "Successfully updated!!"
+        //     console.log('In the component -- synch' ,res);
+        //     // this.todos = res;
+        // })
     }
     
     addTodo(todo: string){

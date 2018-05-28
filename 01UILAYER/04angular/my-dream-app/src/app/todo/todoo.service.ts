@@ -1,6 +1,8 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LOCAL_STORAGE, StorageService } from 'angular-webstorage-service';
+import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators'
  
 const STORAGE_KEY = "my-todos"
 
@@ -11,7 +13,7 @@ const httpOptions = {
   };
 
 @Injectable()
-export class TodoService {
+export class TodooService {
 
     
     
@@ -20,10 +22,13 @@ export class TodoService {
 
     }
 
-    fetchTodos(){
+    fetchTodos(): Observable<any>{
         return this.http.get('http://localhost:3000/todos', httpOptions)
-        .toPromise()
-
+        .pipe(map((res)=> {
+            console.log('In the map function', res)
+            return res;
+        }))
+        
     }
 
     getTodos() {
@@ -66,10 +71,9 @@ export class TodoService {
         // .toPromise()
     }
 
-    synchTodo(todos){
+    synchTodo(todos): Observable<any>{
        
         return this.http.put('http://localhost:3000/todos', todos , httpOptions)
-        .toPromise()
     }
 
     removeTodo(index: number){

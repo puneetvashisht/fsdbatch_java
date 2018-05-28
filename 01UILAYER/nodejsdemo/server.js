@@ -25,4 +25,9 @@ app.post('/todos', (req, res) => {
     res.json(todos)
 })
 
+app.put('/todos', (req, res) => {
+    todos = req.body;
+    res.status(200).json({message: "Successfully updated !!"})
+})
+
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
