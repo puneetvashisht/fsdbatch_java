@@ -142,13 +142,41 @@
             - Property Binding [ ]: Read as attributes into the component
             - Event Binding () : Read it outside the component or component's output
             - Two-way binding [( )]
-
+        - Http communication: Promises vs Observable
+        - HttpModule - Http
+        - Single Page Applications RouterModule -> Gets your web app closer to mobile app
+        - NodeJS -> producing and consuming JSON data.
+        - HTML 5: localstorage/sesssionstorage
 
         Localstorage to work
             1. Install a library:  npm install --save angular-webstorage-service
             2. Import the module for the library
             3. Dependency Inject the StorageService to set and get values
             4. Change from Session storage(temprorary, close d tab) -> LocalStorage
+
+        - Pipes
+            View concern
+            Formatted using existing ones: uppercase, lowercase, date
+            Custom Pipes: ReversePipe, CapitalizePipe
+            Asych Pipes
+
+        - Form Validations
+            Template Based Approach
+            Data driven approach
+                ng-dirty: when you write on a textbox
+                ng-pristine: when it is untouched
+
+                ng-valid: when the form is already valid
+                ng-invalid: when the form is invalid
+                
+
+
+        - Directives - Structural & Attributes
+        - DI in detail
+        - Testing: Unit Testing
+        - Webpack
+
+
 
 
 
