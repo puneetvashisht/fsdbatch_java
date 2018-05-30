@@ -9,14 +9,35 @@ export class DataDrivenComponent implements OnInit {
 
     myForm: FormGroup
 
+    genders: Array<string> = ['Male', 'Female']
+
     constructor() { }
 
     ngOnInit() { 
 
         this.myForm = new FormGroup({
-            'username': new FormControl('', Validators.required),
-            'password': new FormControl('Test', Validators.required)
+            'userData': new FormGroup({
+                'username': new FormControl('', [Validators.required, this.exampleValidator]),
+                'email': new FormControl('', Validators.email)
+            }),
+            'password': new FormControl('', Validators.pattern("^[a-zA-Z0-9!@#$%^&*]{6,16}$")),
+            'gender': new FormControl('Male')     
         })
+
+    }
+
+    onSubmit(){
+       console.log(this.myForm);
+       console.log(this.myForm.value);
+    }
+
+
+    exampleValidator(control: FormControl): {[s: string]: boolean}{
+        if(control.value === 'Ravi'){
+            return {"example": true}
+        }
+        return null;
+    }
 
     }
 
