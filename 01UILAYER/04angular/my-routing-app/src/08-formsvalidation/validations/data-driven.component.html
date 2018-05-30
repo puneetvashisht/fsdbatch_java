@@ -39,6 +39,17 @@
         <small *ngIf="!myForm.controls['password'].valid">Invalid Password!!</small>
       </div>
 
+      <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number"
+                class="form-control"
+                id="age"
+                name="age"
+                formControlName = "age"
+          >
+          <small *ngIf="!myForm.controls['age'].valid">Invalid Age!!</small>
+        </div>
+
       <div class="form-group" *ngFor="let gender of genders">
           <label>{{gender}}
           <input type="radio"

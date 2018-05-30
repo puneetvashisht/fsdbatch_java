@@ -162,12 +162,17 @@
 
         - Form Validations
             Template Based Approach
+            
             Data driven approach
                 ng-dirty: when you write on a textbox
                 ng-pristine: when it is untouched
 
                 ng-valid: when the form is already valid
                 ng-invalid: when the form is invalid
+
+                FormGroup -> FormGroupName -> FormControlName
+                Validators or create custom one (example validator, asych)
+
                 
 
 

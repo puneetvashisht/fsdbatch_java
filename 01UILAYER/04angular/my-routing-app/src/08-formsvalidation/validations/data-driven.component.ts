@@ -24,6 +24,7 @@ export class DataDrivenComponent implements OnInit {
                 'email': new FormControl('', Validators.email)
             }),
             'password': new FormControl('', Validators.pattern("^[a-zA-Z0-9!@#$%^&*]{6,16}$")),
+            'age': new FormControl('', [Validators.min(18), Validators.max(100)]),
             'gender': new FormControl('Male')     
         })
 
