@@ -20,9 +20,10 @@
                   id="email"
                   name="email"
                   formControlName = "email"
-            >
+            />
+            <small *ngIf="!myForm.controls['userData'].controls['email'].valid">Invalid Email!!</small>
           </div>
-
+         
   </div>
     
 
@@ -35,6 +36,7 @@
               name="password"
               formControlName = "password"
         >
+        <small *ngIf="!myForm.controls['password'].valid">Invalid Password!!</small>
       </div>
 
       <div class="form-group" *ngFor="let gender of genders">
