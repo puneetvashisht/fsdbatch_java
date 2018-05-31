@@ -162,7 +162,7 @@
 
         - Form Validations
             Template Based Approach
-            
+
             Data driven approach
                 ng-dirty: when you write on a textbox
                 ng-pristine: when it is untouched
@@ -173,11 +173,8 @@
                 FormGroup -> FormGroupName -> FormControlName
                 Validators or create custom one (example validator, asych)
 
-                
-
-
-        - Directives - Structural & Attributes
         - DI in detail
+        - Directives - Structural & Attributes
         - Testing: Unit Testing
         - Webpack
 

@@ -11,6 +11,20 @@ app.use('*', cors({
     'preflightContinue': false
   }));
 
+  const registeredUsers = ['Ravi', 'Arun', 'Amit', 'TestUser']
+
+  app.get("/userexists/:username", (req, res)=>{
+    let username = req.params.username
+    console.log(username);
+    let index = registeredUsers.indexOf(username)
+    if(index<0){
+        res.json({exists: false})
+    }
+    else{
+        res.json({exists: true})
+    }
+    
+})
 
   const users = [
     {name: 'Kunal Kapoor', age: 28, contact: '6352417896', email: "kunal@gmail.com"},
