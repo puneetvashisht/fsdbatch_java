@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { LogService } from './services/log.service';
 
 @Component({
     selector: 'my-app',
     template:`
         <div>
-            <data-driven></data-driven>
+            <template-driven></template-driven>
+            <hr/>
+            <simple></simple>
         </div>
 
     `

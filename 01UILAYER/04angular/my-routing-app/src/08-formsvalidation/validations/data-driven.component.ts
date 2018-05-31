@@ -21,7 +21,7 @@ export class DataDrivenComponent implements OnInit {
 
         this.myForm = new FormGroup({
             'userData': new FormGroup({
-                'username': new FormControl('', [this.exampleValidator], this.uniqueUserValidator.bind(this)),
+                'username': new FormControl('', [Validators.required, this.exampleValidator], [this.asyncValidator, this.uniqueUserValidator.bind(this)] ),
                 'email': new FormControl('', Validators.email)
             }),
             'password': new FormControl('', Validators.pattern("^[a-zA-Z0-9!@#$%^&*]{6,16}$")),
