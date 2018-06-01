@@ -184,8 +184,27 @@
             
             constructor(http: Http, userService: UserService)
 
-        - Directives - Structural & Attributes
+       
         - Testing: Unit Testing
+            Test Runner: Karma
+            Install packages: karma, karma-jasmine, jasmine, karma-chrome-launcher
+            Testing Library: Jasmine (nUnit, Mocha, Chai ....)
+            Create a karma conf file: karma init
+            Write a functionality and a test case using JS, Jasmine
+            files: [
+            './src/app.js',  -> Source File
+            './src/**/*-spec.js' -> Test Cases file
+            ],
+            karma start
+
+        - Testing : E2E
+
+
+
+
+
+        - Directives - Structural & Attributes
+
 
 
 
