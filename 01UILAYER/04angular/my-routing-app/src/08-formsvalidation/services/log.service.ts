@@ -15,4 +15,13 @@ export class LogService {
         return this.logs
     }
 
+    fetchLogsWithPromise(): Promise <Array<string>> {
+
+       return new Promise((resolve, reject)=> {
+            setTimeout(()=>{
+                resolve(this.logs)    
+            }, 1000)
+        })
+    }
+
 }

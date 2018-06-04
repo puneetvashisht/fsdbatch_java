@@ -199,11 +199,10 @@
 
         - Testing : E2E
 
-
-
-
-
         - Directives - Structural & Attributes
+
+        - Application
+            1. Display courses in a Single page app
 
 
 

@@ -9,6 +9,8 @@ import { LogService } from './services/log.service';
             <template-driven></template-driven>
             <hr/>
             <simple></simple>
+            <my-toggle></my-toggle>
+
         </div>
 
     `
