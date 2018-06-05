@@ -4,17 +4,16 @@
     Welcome to course app!
   </h1>
 
-  <div class="form-group row">
-    <label for="courseName" class="col-sm-2 col-form-label">Search by Course Name</label>
-    <div class="col-sm-10">
-      <input type="search" #coursename (keyup)="0"  class="form-control-plaintext" id="courseName" placeholder="Search by Course Name"/>
-      {{coursename.value}}
-    </div>
+  <nav>
+    <a routerLink="/courses">Courses</a> |  
+    <a routerLink="/add">Add Course</a> 
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
-  <div class="card-group">
-  <cts-course *ngFor="let course of courses | searchcourses: coursename.value " [title]="course.title" [summary]="course.summary"></cts-course>
+
   
-  </div>
 </div>
 
 

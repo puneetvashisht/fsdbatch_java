@@ -9,20 +9,5 @@ import {Course} from './entities/course'
 export class AppComponent {
   title = 'app';
 
-  courses: Array<Course> = [{
-    title: 'Angular',
-    summary: 'ds klgsa jkgsdkl jkdgdks gjklsdk gdskd sksdksk'
-  },
-  {
-    title: 'ReactJS',
-    summary: 'ds klgsa jkgsdkl jkdgdks gjklsdk gdskd sksdksk'
-  },
-  {
-    title: 'Ember',
-    summary: 'ds klgsa jkgsdkl jkdgdks gjklsdk gdskd sksdksk'
-  },
-  {
-    title: 'EmberJS',
-    summary: 'ds klgsa jkgsdkl jkdgdks gjklsdk gdskd sksdksk'
-  }]
+  
 }
