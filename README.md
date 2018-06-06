@@ -205,6 +205,19 @@
             1. Display courses in a Single page app
 
 
+    
+        Java 
+            - Collections
+                ArrayList, LinkedList
+                HashSet, LinkedHashSet, TreeSet
+                HashMap, LinkedHashMap, TreeMap
+                Comparables vs Comparators
+                equals() & hashcode()
+                toString()
+            - Exceptions & String & JDBC
+            
+
+
 
 
 
