@@ -214,7 +214,21 @@
                 Comparables vs Comparators
                 equals() & hashcode()
                 toString()
-            - Exceptions & String & JDBC
+            - Exceptions
+                Why Exceptions: Exception can propogate, Wrap exception within exceptions
+                CheckedException/CompileTime : You always have to handle
+                UncheckedException/RunTime : You don't always have to handle
+                Transactions: RuntimeExceptions can cause a transaction rollback while CheckedExceptions don't rollback.
+                try: guarded region
+                catch: handling
+                throw: Throwing explicitly
+                throws: Give a warning to caller
+                
+
+            
+            
+             String & JDBC
+
             
 
 
