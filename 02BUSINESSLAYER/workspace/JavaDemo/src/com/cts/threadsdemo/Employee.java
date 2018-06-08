@@ -23,8 +23,11 @@ public class Employee implements Comparable<Employee>{
 		return this.name.compareTo(o.name);
 	}
 	
-	public void increment(double salary) throws InterruptedException{
+	public void increment(double salary) throws Exception{
 		Thread.sleep(2000);
+		if(this.id ==4l ){
+			throw new Exception("Something went wrong in processing of theadss");
+		}
 		this.salary += salary;
 	}
 
