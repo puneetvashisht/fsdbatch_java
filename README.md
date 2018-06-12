@@ -229,6 +229,19 @@
              
              JDBC
 
+             Monday: 11th Jun 2018
+             
+             Web App to view and create courses
+                DB interactions
+                JSP Pages
+             
+
+        Spring
+            Steps for creating fist project
+                1. Created a maven project
+                2. Get required dependencies, spring-core and spring-context
+                3. Create required classes and configuration files and test our setup
+
             
 
 
