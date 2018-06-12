@@ -13,7 +13,8 @@
 	
 	<bean id="a" class="com.cts.A">
 		<property name="bObj" ref="b"></property>
+		<property name="c" ref="c1"></property>
 	</bean>
 	<bean id="b" class="com.cts.B"></bean>
-	
+	<bean id="c1" class="com.cts.C"></bean>
 </beans>

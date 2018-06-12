@@ -7,8 +7,19 @@ public class A {
 	
 	//Dependency Injection, using property injection with setter
 	B bObj;
+	C c;
 	
 	
+	public C getC() {
+		return c;
+	}
+
+
+	public void setC(C c) {
+		this.c = c;
+	}
+
+
 	public B getbObj() {
 		return bObj;
 	}
@@ -22,6 +33,7 @@ public class A {
 	public void execute(){
 		System.out.println("Exceute in A");
 		bObj.execute();
+		c.execute();
 	}
 
 }
