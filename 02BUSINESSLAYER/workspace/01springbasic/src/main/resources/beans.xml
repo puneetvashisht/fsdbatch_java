@@ -11,10 +11,14 @@
  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
  http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
+	<context:component-scan base-package="com.cts"></context:component-scan>
+	<!--Just scan this package and look out for beans marked as @Component  -->
+<!-- 	
+	No need to declare beans here, so commented all
 	<bean id="a" class="com.cts.A">
 		<property name="bObj" ref="b"></property>
 		<property name="c" ref="c1"></property>
 	</bean>
 	<bean id="b" class="com.cts.B"></bean>
-	<bean id="c1" class="com.cts.C"></bean>
+	<bean id="c1" class="com.cts.C"></bean> -->
 </beans>
