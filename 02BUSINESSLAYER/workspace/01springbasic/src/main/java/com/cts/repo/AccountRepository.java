@@ -1,10 +1,8 @@
 package com.cts.repo;
 
-import org.springframework.stereotype.Repository;
-
 // Repository in repo packages
 
-@Repository
+//@Repository
 public class AccountRepository {
 
 	public void fetchAccount(Integer accNo1) {
