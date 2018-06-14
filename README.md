@@ -242,6 +242,20 @@
                 2. Get required dependencies, spring-core and spring-context
                 3. Create required classes and configuration files and test our setup
 
+            XML vs Annotations
+            Constructor and Setter Injections
+                Constructor for mandatory dependencies
+                Setters for option dependencies
+            Lifecyle of Spring Beans
+                Initalization
+                    - Load the beans
+                    - BFPP : Bean factory post processors
+                        PropertyPlaceHolderConfigurer
+                    - Constructor and then setter injection
+                    - BPP :Bean post processor for each bean
+                        @PostContruct
+
+
             
 
 
