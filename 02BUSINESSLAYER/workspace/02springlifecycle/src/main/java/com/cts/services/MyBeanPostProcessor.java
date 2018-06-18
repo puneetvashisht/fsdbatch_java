@@ -10,6 +10,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor{
 	@Override
 	public Object postProcessAfterInitialization(Object obj, String arg1) throws BeansException {
 		System.out.println("After BPP for " + obj);
+//		obj.
 		return obj;
 	}
 
