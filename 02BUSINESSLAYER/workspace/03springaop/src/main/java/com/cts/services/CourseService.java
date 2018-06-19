@@ -13,19 +13,6 @@ import com.cts.entity.Course;
 @Service
 public class CourseService {
 	
-	
-	MyDataSource myDataSource;
-	
-	public MyDataSource getMyDataSource() {
-		return myDataSource;
-	}
-	
-
-	@Autowired
-	public void setMyDataSource(MyDataSource myDataSource) {
-		System.out.println("setter...");
-		this.myDataSource = myDataSource;
-	}
 
 
 	CourseService(){
@@ -42,17 +29,20 @@ public class CourseService {
 	
 	
 	public List<Course> fetchCourses(){
-		System.out.println(myDataSource);
+//		System.out.println(myDataSource);
 		Course course1 = new Course(23, "Angular", "framework by google");
 		courses.add(course1);
 		return this.courses;
 	}
 	
-	public Course fetchCourseById(int id){
+	public Course fetchCourseById(int id) throws Exception{
 		//Logging Code
 //		System.out.println("Course Id recieved is " + id);
 		
 		// Business Logic Code
+		if(id==234){
+			throw new Exception("Something went wrong");
+		}
 		Course course1 = new Course(id, "Angular", "framework by google");
 		return course1;
 	}

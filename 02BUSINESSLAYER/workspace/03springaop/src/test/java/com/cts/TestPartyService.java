@@ -1,26 +1,20 @@
 package com.cts;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
-import java.util.List;
-
 import org.junit.Test;
-import org.junit.internal.runners.statements.Fail;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.cts.entity.Course;
-import com.cts.services.CourseService;
+import com.cts.party.entity.PartyPeople;
+import com.cts.party.service.IPartyService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:beans.xml")
-public class TestCourseService {
+public class TestPartyService {
 	
 	@Autowired
-	CourseService service;
+	IPartyService partyService;
 
 //	@Test
 //	public void testFetchCourses(){
@@ -29,17 +23,14 @@ public class TestCourseService {
 //	}
 	
 	@Test
-	public void testFetchCourseById(){
-		Course course= null;
+	public void testLetsParty(){
+		PartyPeople p1 = new PartyPeople("arnold", true);
 		try {
-			course = service.fetchCourseById(234);
+			partyService.letsParty(p1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-			
+//			e.printStackTrace();
 		}
-		Course course2 = service.fetchCourseByName("React");
-		List<Course> courses = service.fetchCourses();
-//		assertEquals("The length should be 1", course.getId(), 234);
+		System.out.println("Allz well!! that ends well");
 	}
 }

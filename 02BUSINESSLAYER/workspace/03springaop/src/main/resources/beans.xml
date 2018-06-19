@@ -10,15 +10,8 @@
  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
  http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:component-scan base-package="com.cts.services"></context:component-scan>
+	<context:component-scan base-package="com.cts.services, com.cts.party"></context:component-scan>
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-<!-- Implementation of BFPP  -->
-	<context:property-placeholder location="db.properties" />
 
-	<bean id="myDataSource" class="com.cts.services.MyDataSource">
-		<property name="dbUrl" value="${dbUrl}"></property>
-		<property name="dbPort" value="${dbPort}"></property>
-		<property name="dbUser" value="${dbUser}"></property>
-	</bean>
 
 </beans>
