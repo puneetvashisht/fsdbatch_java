@@ -13,26 +13,33 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cts.entity.Course;
-import com.cts.repository.CourseRepository;
 import com.cts.services.CourseService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:beans.xml")
-public class TestCourseService {
+public class TestCourseRepo {
 	
 	@Autowired
-	CourseRepository repo;
-
+	CourseService service;
 
 //	@Test
-	public void testFetchCourse(){
-		int result = repo.fetchAllCourses();
-		assertEquals("Two courses should be present", result, 2);
-	}
+//	public void testFetchCourses(){
+//		List<Course> courses = service.fetchCourses();
+//		assertEquals("The length should be 1", courses.size(), 1);
+//	}
 	
 	@Test
-	public void testFetchCourseByName(){
-		Course course = repo.fetchAllCoursesByName("Angular");
-		assertEquals("Two courses should be present", course.getTitle(), "Angular");
+	public void testFetchCourseById(){
+		Course course= null;
+		try {
+			course = service.fetchCourseById(234);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		Course course2 = service.fetchCourseByName("React");
+		List<Course> courses = service.fetchCourses();
+//		assertEquals("The length should be 1", course.getId(), 234);
 	}
 }

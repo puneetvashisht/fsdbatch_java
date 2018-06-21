@@ -254,6 +254,20 @@
                     - Constructor and then setter injection
                     - BPP :Bean post processor for each bean
                         @PostContruct
+            Spring AOP
+                @Before
+                @AfterReturning
+                @AfterThrowing
+                @After
+                @Around
+            Spring JDBC
+                jdbcTemplate (without writing boilerplate code)
+            Spring JPA
+                add spring-orm, hibernate
+                beans.xml - entityManagerFactory
+                Repository and inject entityManager
+                Entity -> @Entity and with @Id, @Column
+                META-INF -> persistence.xml
 
 
             
