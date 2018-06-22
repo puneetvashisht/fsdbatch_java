@@ -25,7 +25,9 @@ describe('LogService', () => {
       // let logService: LogService = new LogService();
         logService.log('Just a message to log');
         logService.log('Just a message to log');
+        
         logService.fetchLogsWithPromise().then((logs: Array<string>)=> {
+          console.log(logs)
           expect(logs.length).toBe(2)
         })
 

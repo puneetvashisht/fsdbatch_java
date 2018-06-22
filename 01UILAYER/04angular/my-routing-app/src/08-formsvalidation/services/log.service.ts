@@ -20,7 +20,7 @@ export class LogService {
        return new Promise((resolve, reject)=> {
             setTimeout(()=>{
                 resolve(this.logs)    
-            }, 1000)
+            }, 0)
         })
     }
 
