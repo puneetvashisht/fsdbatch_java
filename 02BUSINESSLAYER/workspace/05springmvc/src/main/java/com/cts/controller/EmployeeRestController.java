@@ -1,8 +1,13 @@
 package com.cts.controller;
 
-import java.util.Collection;
+import java.util.List;
+
+import javax.persistence.NoResultException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,17 +24,29 @@ public class EmployeeRestController {
 	EmployeeRepository repository;
 	
 
-
 	@RequestMapping(path="/employees", method=RequestMethod.GET)
 	@ResponseBody
-	public Collection<Employee> fetchEmployees(){
-		Collection<Employee> employees = repository.findEmployees();
+	public ResponseEntity<List<Employee>>fetchEmployees(){
+		List<Employee> employees = repository.findEmployees();
 		System.out.println("Employees the REST controller");
 		System.out.println(employees);
+		return new ResponseEntity<List<Employee>>(employees, HttpStatus.OK);
+//	    return employees;
+	}
+	
+	@RequestMapping(value = "/employee", method = RequestMethod.POST)
+	public ResponseEntity<Void> createEmployee(@RequestBody Employee employee) {
+		System.out.println("Creating Employee " + employee);
 		
-		
-//		return new ResponseEntity<List<Employee>>(employees, HttpStatus.OK);
-	    return employees;
+		try{
+			Employee emp = repository.findByName(employee.getName());
+			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+		}
+		catch(NoResultException nre){
+			repository.addEmployee(employee);
+			return new ResponseEntity<Void>(HttpStatus.CREATED);
+		}	
+	
 	}
 
 

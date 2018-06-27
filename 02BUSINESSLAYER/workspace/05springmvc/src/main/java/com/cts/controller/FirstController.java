@@ -3,11 +3,15 @@ package com.cts.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cts.entity.Employee;
 import com.cts.repository.EmployeeRepository;
@@ -38,6 +42,8 @@ public class FirstController {
 		return "employees";
 	}
 	
+
+	
 	@RequestMapping(path="/employee", method=RequestMethod.POST)
 	public String addEmployees(Model model,  @RequestParam(value="name", required=true) String name, 
 	    @RequestParam(value="salary", required=false) Double salary){
@@ -46,5 +52,7 @@ public class FirstController {
 		model.addAttribute("message", "Successfully added, " + employee.getName());
 		return "employee";
 	}
+	
+	
 
 }
