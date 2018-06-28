@@ -8,7 +8,7 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { EmployeeService } from './services/employee.service';
 import { HttpModule } from '@angular/http';
 import { FilterEmployeePipe } from './pipes/filter-employee.pipe';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes = [
   {path:"", component: ViewEmployeesComponent},
   {path:"add", component: AddEmployeeComponent}
@@ -18,7 +18,7 @@ const routes = [
     AppComponent, ViewEmployeesComponent, AddEmployeeComponent, FilterEmployeePipe
   ],
   imports: [
-    BrowserModule, HttpModule, RouterModule.forRoot(routes)
+    BrowserModule, HttpModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
