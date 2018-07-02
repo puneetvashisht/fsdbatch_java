@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 import { EmployeeService } from '../../services/employee.service';
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -17,13 +18,29 @@ export class AddEmployeeComponent implements OnInit {
 
   genders: Array<string> = ['Male', 'Female']
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe( params => {
+      if(params.id){
+        this.fetchEmployee(params.id) 
+      }
+    });
+  }
 
+  fetchEmployee(id: number){
+    this.employeeService.fetchEmployee(id)
+    .then(data => {
+      console.log(data);
+      this.myForm.controls['id'].setValue(data.id)
+      this.myForm.controls['name'].setValue( data.name);
+      this.myForm.controls['salary'].setValue( data.salary);
+    })
+  }
 
 
   ngOnInit() {
 
-      this.myForm = new FormGroup({     
+      this.myForm = new FormGroup({  
+              'id': new FormControl('' ),   
               'name': new FormControl('', [Validators.required] ),
               'salary': new FormControl('', Validators.required)
           // 'password': new FormControl('', Validators.pattern("^[a-zA-Z0-9!@#$%^&*]{6,16}$")),
@@ -53,6 +70,13 @@ export class AddEmployeeComponent implements OnInit {
           this.message = "Employee already exists!!"
         }
       })
+  }
+  updateEmployee() {
+      console.log(this.myForm);
+      console.log(this.myForm.value);
+      this.employeeService.updateEmployee(this.myForm.value)
+      .then((data) => console.log(data))
+      
   }
 
 

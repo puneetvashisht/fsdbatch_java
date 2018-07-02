@@ -23,9 +23,10 @@ public class EmployeeRepository {
 		em.persist(emp);
 	}
 
-	public void findEmployee(int id) {
+	public Employee findEmployee(int id) {
 		Employee emp = em.find(Employee.class, id);
 		System.out.println(emp);
+		return emp;
 	}
 	public  List<Employee> findEmployees() {
 		TypedQuery<Employee> query = em.createNamedQuery("findEmployees", Employee.class);
@@ -42,9 +43,10 @@ public class EmployeeRepository {
 	}
 
 	@Transactional
-	public void updateEmployee(int id, double salary) {
-		Employee emp = em.find(Employee.class, id);
-		emp.setSalary(salary);
+	public void updateEmployee(Employee newEmployee) {
+		Employee emp = em.find(Employee.class, newEmployee.getId());
+		emp.setSalary(newEmployee.getSalary());
+		emp.setName(newEmployee.getName());
 		System.out.println(emp);
 	}
 

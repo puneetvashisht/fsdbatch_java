@@ -11,7 +11,8 @@ import { FilterEmployeePipe } from './pipes/filter-employee.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes = [
   {path:"", component: ViewEmployeesComponent},
-  {path:"add", component: AddEmployeeComponent}
+  {path:"add", component: AddEmployeeComponent},
+  {path:"edit/:id", component: AddEmployeeComponent},
 ]
 @NgModule({
   declarations: [

@@ -11,8 +11,19 @@ export class EmployeeService {
     return this.http.get('http://localhost:8080/05springmvc/api/employees').toPromise()
     .then(res=>res.json())
   }
+  fetchEmployee(id: number): Promise<any>{
+    return this.http.get('http://localhost:8080/05springmvc/api/employee/'+id).toPromise()
+    .then(res=>res.json())
+  }
+  updateEmployee(employee:Employee){
+    return this.http.put('http://localhost:8080/05springmvc/api/employee', employee).toPromise()
+  }
 
   addEmployee(employee:Employee): Promise<any>{
     return this.http.post('http://localhost:8080/05springmvc/api/employee', employee).toPromise()
+  }
+
+  deleteEmployee(index:number): Promise<any>{
+    return this.http.delete('http://localhost:8080/05springmvc/api/employee/'+index).toPromise()
   }
 }
