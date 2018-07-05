@@ -2,10 +2,17 @@
 
     UI
         HTML (Structure)
-            - Websocket
+            - New Input Types(date, datetime, ranges)
+            - Semantic (header, footer, section, aside)
+            - Application Cache 
+            - Multimedia features - audio and video--> tracks and equalizer, custom events
+            - Geolocation -> navigator.geolocation
+            - Webworker to run process intensive JS in background
+            - SSE
+            - Websockets
             - Fetch API
-            - Local storage
-            - App Cache
+            - Web storage (local/session)
+            - Graphicss (SVG & Canvas)
         CSS (Presentation)
             - CSS 3 Transitions
             - SVG

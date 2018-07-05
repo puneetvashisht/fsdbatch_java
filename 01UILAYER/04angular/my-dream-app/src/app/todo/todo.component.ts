@@ -34,8 +34,8 @@ import {TodooService} from './todoo.service'
 })
 export class TodoComponent implements OnInit {
 
-    private todos;
-    private message: string = ""
+    public todos;
+    public message: string = ""
        
     constructor(public todoService: TodooService) {
         console.log('CONSTRUCTOR **')
