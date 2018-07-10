@@ -28,6 +28,7 @@
         <property name="hibernate.format_sql">true</property>
 
 		<mapping class="com.cts.entities.Employee" />
+		<mapping class="com.cts.entities.Address" />
 	</session-factory>
 	
 	

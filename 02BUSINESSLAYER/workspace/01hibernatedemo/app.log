@@ -8,3 +8,958 @@
         employee0_.id=?
 2018-Jul-09 15:44:18 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
 2018-Jul-09 15:44:18 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_0_0_] : [VARCHAR]) - [Ravi]
+2018-Jul-10 14:20:10 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table Address (
+       id integer not null,
+        MY_CITY varchar(255),
+        location varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-10 14:20:10 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:20:10 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2018-Jul-10 14:20:10 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Ravi]
+2018-Jul-10 14:25:20 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table cogdb.Employee_1 
+       add column address_id integer
+2018-Jul-10 14:25:20 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1 
+       add constraint FKq0k5320h3ykduxo2ul5x1ccb 
+       foreign key (address_id) 
+       references Address (id)
+2018-Jul-10 14:25:21 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:25:21 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:25:21 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:25:21 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:25:21 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:25:21 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Delhi]
+2018-Jul-10 14:25:21 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Gk]
+2018-Jul-10 14:25:21 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [6]
+2018-Jul-10 14:25:21 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1
+        (address_id, name, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:25:21 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [6]
+2018-Jul-10 14:25:21 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Sandeep]
+2018-Jul-10 14:25:21 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [5]
+2018-Jul-10 14:27:27 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1 
+       add constraint FKq0k5320h3ykduxo2ul5x1ccb 
+       foreign key (address_id) 
+       references Address (id)
+2018-Jul-10 14:27:28 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.address_id as address_3_1_0_,
+        employee0_.name as name2_1_0_,
+        address1_.id as id1_0_1_,
+        address1_.MY_CITY as MY_CITY2_0_1_,
+        address1_.location as location3_0_1_ 
+    from
+        Employee_1 employee0_ 
+    left outer join
+        Address address1_ 
+            on employee0_.address_id=address1_.id 
+    where
+        employee0_.id=?
+2018-Jul-10 14:27:28 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [5]
+2018-Jul-10 14:27:28 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id1_0_1_] : [INTEGER]) - [6]
+2018-Jul-10 14:27:28 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([address_3_1_0_] : [INTEGER]) - [6]
+2018-Jul-10 14:27:28 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Sandeep]
+2018-Jul-10 14:27:28 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_1_] : [VARCHAR]) - [Delhi]
+2018-Jul-10 14:27:28 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_1_] : [VARCHAR]) - [Gk]
+2018-Jul-10 14:28:17 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1 
+       add constraint FKq0k5320h3ykduxo2ul5x1ccb 
+       foreign key (address_id) 
+       references Address (id)
+2018-Jul-10 14:28:18 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.address_id as address_3_1_0_,
+        employee0_.name as name2_1_0_,
+        address1_.id as id1_0_1_,
+        address1_.MY_CITY as MY_CITY2_0_1_,
+        address1_.location as location3_0_1_ 
+    from
+        Employee_1 employee0_ 
+    left outer join
+        Address address1_ 
+            on employee0_.address_id=address1_.id 
+    where
+        employee0_.id=?
+2018-Jul-10 14:28:18 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [5]
+2018-Jul-10 14:28:18 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id1_0_1_] : [INTEGER]) - [6]
+2018-Jul-10 14:28:18 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([address_3_1_0_] : [INTEGER]) - [6]
+2018-Jul-10 14:28:18 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Sandeep]
+2018-Jul-10 14:28:18 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_1_] : [VARCHAR]) - [Delhi]
+2018-Jul-10 14:28:18 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_1_] : [VARCHAR]) - [Gk]
+2018-Jul-10 14:29:20 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1 
+       add constraint FKq0k5320h3ykduxo2ul5x1ccb 
+       foreign key (address_id) 
+       references Address (id)
+2018-Jul-10 14:29:20 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.address_id as address_3_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:29:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [5]
+2018-Jul-10 14:29:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([address_3_1_0_] : [INTEGER]) - [6]
+2018-Jul-10 14:29:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Sandeep]
+2018-Jul-10 14:29:20 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        address0_.id as id1_0_0_,
+        address0_.MY_CITY as MY_CITY2_0_0_,
+        address0_.location as location3_0_0_ 
+    from
+        Address address0_ 
+    where
+        address0_.id=?
+2018-Jul-10 14:29:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [6]
+2018-Jul-10 14:29:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_0_] : [VARCHAR]) - [Delhi]
+2018-Jul-10 14:29:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_0_] : [VARCHAR]) - [Gk]
+2018-Jul-10 14:30:48 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1 
+       add constraint FKq0k5320h3ykduxo2ul5x1ccb 
+       foreign key (address_id) 
+       references Address (id)
+2018-Jul-10 14:30:48 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.address_id as address_3_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:30:48 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [5]
+2018-Jul-10 14:30:48 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([address_3_1_0_] : [INTEGER]) - [6]
+2018-Jul-10 14:30:48 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Sandeep]
+2018-Jul-10 14:30:48 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        address0_.id as id1_0_0_,
+        address0_.MY_CITY as MY_CITY2_0_0_,
+        address0_.location as location3_0_0_ 
+    from
+        Address address0_ 
+    where
+        address0_.id=?
+2018-Jul-10 14:30:48 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [6]
+2018-Jul-10 14:30:48 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_0_] : [VARCHAR]) - [Delhi]
+2018-Jul-10 14:30:48 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_0_] : [VARCHAR]) - [Gk]
+2018-Jul-10 14:32:46 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1 
+       add constraint FKq0k5320h3ykduxo2ul5x1ccb 
+       foreign key (address_id) 
+       references Address (id)
+2018-Jul-10 14:32:47 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.address_id as address_3_1_0_,
+        employee0_.name as name2_1_0_,
+        address1_.id as id1_0_1_,
+        address1_.MY_CITY as MY_CITY2_0_1_,
+        address1_.location as location3_0_1_ 
+    from
+        Employee_1 employee0_ 
+    left outer join
+        Address address1_ 
+            on employee0_.address_id=address1_.id 
+    where
+        employee0_.id=?
+2018-Jul-10 14:32:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [5]
+2018-Jul-10 14:32:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id1_0_1_] : [INTEGER]) - [6]
+2018-Jul-10 14:32:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([address_3_1_0_] : [INTEGER]) - [6]
+2018-Jul-10 14:32:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Sandeep]
+2018-Jul-10 14:32:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_1_] : [VARCHAR]) - [Delhi]
+2018-Jul-10 14:32:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_1_] : [VARCHAR]) - [Gk]
+2018-Jul-10 14:33:42 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1 
+       add constraint FKq0k5320h3ykduxo2ul5x1ccb 
+       foreign key (address_id) 
+       references Address (id)
+2018-Jul-10 14:33:43 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.address_id as address_3_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:33:43 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [5]
+2018-Jul-10 14:33:43 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([address_3_1_0_] : [INTEGER]) - [6]
+2018-Jul-10 14:33:43 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Sandeep]
+2018-Jul-10 14:39:23 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table Employee_1_Address (
+       Employee_1_id integer not null,
+        addresses_id integer not null,
+        primary key (Employee_1_id, addresses_id)
+    ) engine=MyISAM
+2018-Jul-10 14:39:23 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       drop index UK_gqta36y0aib87gvgrkr29vm0n
+2018-Jul-10 14:39:23 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint UK_gqta36y0aib87gvgrkr29vm0n unique (addresses_id)
+2018-Jul-10 14:39:23 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:39:23 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Lini]
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [7]
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Delhi]
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Gk]
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [8]
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Gurugram]
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [DLF]
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [9]
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1_Address
+        (Employee_1_id, addresses_id) 
+    values
+        (?, ?)
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [8]
+2018-Jul-10 14:39:24 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1_Address
+        (Employee_1_id, addresses_id) 
+    values
+        (?, ?)
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:39:24 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [9]
+2018-Jul-10 14:41:01 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:41:01 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:41:02 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:41:02 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:41:02 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Lini]
+2018-Jul-10 14:41:37 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:41:38 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:41:38 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Lini]
+2018-Jul-10 14:41:38 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        addresses0_.Employee_1_id as Employee1_2_0_,
+        addresses0_.addresses_id as addresse2_2_0_,
+        address1_.id as id1_0_1_,
+        address1_.MY_CITY as MY_CITY2_0_1_,
+        address1_.location as location3_0_1_ 
+    from
+        Employee_1_Address addresses0_ 
+    inner join
+        Address address1_ 
+            on addresses0_.addresses_id=address1_.id 
+    where
+        addresses0_.Employee_1_id=?
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id1_0_1_] : [INTEGER]) - [8]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_1_] : [VARCHAR]) - [Delhi]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_1_] : [VARCHAR]) - [Gk]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([Employee1_2_0_] : [INTEGER]) - [7]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([addresse2_2_0_] : [INTEGER]) - [8]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id1_0_1_] : [INTEGER]) - [9]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_1_] : [VARCHAR]) - [Gurugram]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_1_] : [VARCHAR]) - [DLF]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([Employee1_2_0_] : [INTEGER]) - [7]
+2018-Jul-10 14:41:38 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([addresse2_2_0_] : [INTEGER]) - [9]
+2018-Jul-10 14:47:04 PM [main] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists Address
+2018-Jul-10 14:47:04 PM [main] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists Employee_1
+2018-Jul-10 14:47:04 PM [main] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists Employee_1_Address
+2018-Jul-10 14:47:04 PM [main] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists hibernate_sequence
+2018-Jul-10 14:47:04 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table Address (
+       id integer not null,
+        MY_CITY varchar(255),
+        location varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-10 14:47:04 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table Employee_1 (
+       id integer not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-10 14:47:04 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table Employee_1_Address (
+       Employee_1_id integer not null,
+        addresses_id integer not null,
+        primary key (Employee_1_id, addresses_id)
+    ) engine=MyISAM
+2018-Jul-10 14:47:04 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=MyISAM
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    insert into hibernate_sequence values ( 1 )
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    insert into hibernate_sequence values ( 1 )
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint UK_gqta36y0aib87gvgrkr29vm0n unique (addresses_id)
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Lini]
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [1]
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Gurugram]
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [DLF]
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [2]
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Delhi]
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Gk]
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [3]
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1_Address
+        (Employee_1_id, addresses_id) 
+    values
+        (?, ?)
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [2]
+2018-Jul-10 14:47:05 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1_Address
+        (Employee_1_id, addresses_id) 
+    values
+        (?, ?)
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2018-Jul-10 14:47:05 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [3]
+2018-Jul-10 14:50:53 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:50:53 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:50:53 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:50:53 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Lini]
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [4]
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Delhi]
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Gk]
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [5]
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Gurugram]
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [DLF]
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [6]
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        Employee_1 
+    set
+        name=? 
+    where
+        id=?
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [ABCD]
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [4]
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1_Address
+        (Employee_1_id, addresses_id) 
+    values
+        (?, ?)
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [4]
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [5]
+2018-Jul-10 14:50:54 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1_Address
+        (Employee_1_id, addresses_id) 
+    values
+        (?, ?)
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [4]
+2018-Jul-10 14:50:54 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [6]
+2018-Jul-10 14:53:06 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:53:06 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Lini]
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [7]
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Delhi]
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Gk]
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [8]
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Address
+        (MY_CITY, location, id) 
+    values
+        (?, ?, ?)
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Gurugram]
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [DLF]
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [9]
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1_Address
+        (Employee_1_id, addresses_id) 
+    values
+        (?, ?)
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [8]
+2018-Jul-10 14:53:07 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee_1_Address
+        (Employee_1_id, addresses_id) 
+    values
+        (?, ?)
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:53:07 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [9]
+2018-Jul-10 14:56:28 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:56:28 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:56:28 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:56:28 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:56:28 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Lini]
+2018-Jul-10 14:57:25 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:57:25 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:57:25 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:57:25 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:57:25 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Lini]
+2018-Jul-10 14:58:36 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:58:36 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:58:37 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:58:37 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:58:37 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [Lini]
+2018-Jul-10 14:58:37 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        Employee_1 
+    set
+        name=? 
+    where
+        id=?
+2018-Jul-10 14:58:37 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [YYYY]
+2018-Jul-10 14:58:37 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [7]
+2018-Jul-10 14:59:43 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 14:59:43 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 14:59:43 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 14:59:43 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 14:59:43 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [YYYY]
+2018-Jul-10 15:00:47 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 15:00:47 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 15:00:47 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 15:00:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 15:00:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [YYYY]
+2018-Jul-10 15:01:49 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 15:01:49 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 15:01:50 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 15:01:50 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 15:01:50 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [YYYY]
+2018-Jul-10 15:02:32 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKmr6bp93vvtesl5cr8ojcs2nas 
+       foreign key (addresses_id) 
+       references Address (id)
+2018-Jul-10 15:02:32 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Employee_1_Address 
+       add constraint FKfxuh9kd2rbroqv8gbwh1gosut 
+       foreign key (Employee_1_id) 
+       references Employee_1 (id)
+2018-Jul-10 15:02:32 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_1_0_,
+        employee0_.name as name2_1_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [YYYY]
+2018-Jul-10 15:02:32 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        addresses0_.Employee_1_id as Employee1_2_0_,
+        addresses0_.addresses_id as addresse2_2_0_,
+        address1_.id as id1_0_1_,
+        address1_.MY_CITY as MY_CITY2_0_1_,
+        address1_.location as location3_0_1_ 
+    from
+        Employee_1_Address addresses0_ 
+    inner join
+        Address address1_ 
+            on addresses0_.addresses_id=address1_.id 
+    where
+        addresses0_.Employee_1_id=?
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id1_0_1_] : [INTEGER]) - [8]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_1_] : [VARCHAR]) - [Delhi]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_1_] : [VARCHAR]) - [Gk]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([Employee1_2_0_] : [INTEGER]) - [7]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([addresse2_2_0_] : [INTEGER]) - [8]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id1_0_1_] : [INTEGER]) - [9]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([MY_CITY2_0_1_] : [VARCHAR]) - [Gurugram]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([location3_0_1_] : [VARCHAR]) - [DLF]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([Employee1_2_0_] : [INTEGER]) - [7]
+2018-Jul-10 15:02:32 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([addresse2_2_0_] : [INTEGER]) - [9]

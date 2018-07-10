@@ -20,6 +20,8 @@ public class EmployeeRepo {
 		// Manual transactions
 		Transaction tx = session.beginTransaction();
 		session.save(emp);
+		
+		//
 
 		tx.commit();
 		session.close();
@@ -34,9 +36,17 @@ public class EmployeeRepo {
 	public Employee findEmployee(int id) {
 		// Physical connection to perform db operations
 		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
 		Employee emp = session.get(Employee.class, id);
+		System.out.println(emp.getAddresses());
+		
+		
+		tx.commit();
+		session.close();
 		return emp;
-				
+			
+		
 	}
 
 }
