@@ -10,7 +10,7 @@ import com.cts.entities.Address;
 import com.cts.entities.Employee;
 import com.cts.repos.EmployeeRepo;
 
-public class TestEmployeeWithAddressRepo {
+public class TestEmployeeWithAddressRepo2 {
 
 	private EmployeeRepo repo = new EmployeeRepo();
 
@@ -31,29 +31,31 @@ public class TestEmployeeWithAddressRepo {
 
 //	@Test
 	public void addEmployeeWithAddresses() {
+		Employee emp1 = new Employee();
+		emp1.setName("Rahul");
+		
 
 		Address address = new Address("Gk", "Delhi");
+		address.setEmployee(emp1);
 		Address officeAddress = new Address("DLF", "Gurugram");
+		officeAddress.setEmployee(emp1);
 		Set<Address> addresses = new HashSet<>();
 		addresses.add(address); addresses.add(officeAddress);
-		Employee emp1 = new Employee();
 		
-		emp1.setName("Lini");
 		emp1.setAddresses(addresses);
 		// emp1.setAddress(address);
 		repo.addEmployee(emp1);
 		
-		
-		emp1.setName("ABCD");
+
 	}
 	
 
 	@Test
 	public void findEmployee() {
-		Employee employee = repo.findEmployee(7);
+		Employee employee = repo.findEmployee(22);
 		System.out.println(employee);
 		
-		employee.setName("ZZZZ");
+//		employee.setName("ZZZZ");
 		
 		System.out.println(employee.getAddresses());
 //		 System.out.println(employee.getAddress());

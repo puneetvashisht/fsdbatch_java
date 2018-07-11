@@ -5,10 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
-public class Address {
+public class Address2 {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -19,22 +18,9 @@ public class Address {
 	@Column(name ="MY_CITY")
 	String city;
 	
-	@ManyToOne
-	Employee employee;
-	
-	
-	
-	public Employee getEmployee() {
-		return employee;
-	}
+	public Address2(){}
 
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
-
-	public Address(){}
-
-	public Address(String location, String city) {
+	public Address2(String location, String city) {
 		super();
 		this.location = location;
 		this.city = city;

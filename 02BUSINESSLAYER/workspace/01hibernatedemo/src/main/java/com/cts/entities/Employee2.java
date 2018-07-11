@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity(name="Employee_1")
-public class Employee {
+public class Employee2 {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -27,7 +27,7 @@ public class Employee {
 //		this.address = address;
 //	}
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="employee")
+	@OneToMany(cascade=CascadeType.ALL)
 	Set<Address> addresses;
 	
 	

@@ -29,6 +29,8 @@
 
 		<mapping class="com.cts.entities.Employee" />
 		<mapping class="com.cts.entities.Address" />
+		<mapping class="com.cts.entities.BankUser" />
+		<mapping class="com.cts.entities.CompositeKey" />
 	</session-factory>
 	
 	
