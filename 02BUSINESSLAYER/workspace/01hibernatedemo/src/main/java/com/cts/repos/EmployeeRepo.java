@@ -42,16 +42,17 @@ public class EmployeeRepo {
 		Transaction tx = session.beginTransaction();
 		
 		Employee emp = session.get(Employee.class, id);
+		emp.setName("Zane");
 		
 		Set<Address> addresses = emp.getAddresses();
 		System.out.println(addresses);
 		
 		
 		//Persistent state
-		for(Address address: addresses){
-			Employee e = address.getEmployee();
-			e.setName("Shivam");
-		}
+//		for(Address address: addresses){
+//			Employee e = address.getEmployee();
+//			e.setName("Shivam");
+//		}
 		
 		
 //		Address newAddress = new Address();

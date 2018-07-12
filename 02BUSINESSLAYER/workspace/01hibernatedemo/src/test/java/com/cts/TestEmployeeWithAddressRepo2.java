@@ -32,15 +32,19 @@ public class TestEmployeeWithAddressRepo2 {
 //	@Test
 	public void addEmployeeWithAddresses() {
 		Employee emp1 = new Employee();
-		emp1.setName("Rahul");
+		emp1.setName("Romit");
 		
 
 		Address address = new Address("Gk", "Delhi");
 		address.setEmployee(emp1);
+		
+		Address address2 = new Address("LP", "Delhi");
+		address2.setEmployee(emp1);
+		
 		Address officeAddress = new Address("DLF", "Gurugram");
 		officeAddress.setEmployee(emp1);
 		Set<Address> addresses = new HashSet<>();
-		addresses.add(address); addresses.add(officeAddress);
+		addresses.add(address); addresses.add(address2); addresses.add(officeAddress);
 		
 		emp1.setAddresses(addresses);
 		// emp1.setAddress(address);
@@ -52,7 +56,7 @@ public class TestEmployeeWithAddressRepo2 {
 
 	@Test
 	public void findEmployee() {
-		Employee employee = repo.findEmployee(22);
+		Employee employee = repo.findEmployee(40);
 		System.out.println(employee);
 		
 //		employee.setName("ZZZZ");

@@ -4,10 +4,16 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
+
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity(name="Employee_1")
 public class Employee {
@@ -15,6 +21,9 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int id;
+	
+	@Version
+	int versionId;
 	
 	String name;
 	
@@ -28,6 +37,8 @@ public class Employee {
 //	}
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="employee")
+	@Fetch(FetchMode.SUBSELECT)
+//	@BatchSize(size=2)
 	Set<Address> addresses;
 	
 	
