@@ -1810,3 +1810,419 @@
         id=?
 2018-Jul-11 15:40:55 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Shivam]
 2018-Jul-11 15:40:55 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [22]
+2018-Jul-12 14:24:41 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:25:52 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table Employee (
+       EMP_TYPE varchar(31) not null,
+        id integer not null,
+        name varchar(255),
+        duration integer,
+        payPerHour double precision,
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-12 14:25:52 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:25:53 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:25:53 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:25:53 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee
+        (name, EMP_TYPE, id) 
+    values
+        (?, '0', ?)
+2018-Jul-12 14:25:53 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Priya]
+2018-Jul-12 14:25:53 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [26]
+2018-Jul-12 14:26:46 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:26:47 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:26:47 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:26:47 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee
+        (name, duration, payPerHour, EMP_TYPE, id) 
+    values
+        (?, ?, ?, '1', ?)
+2018-Jul-12 14:26:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Ravi]
+2018-Jul-12 14:26:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [12]
+2018-Jul-12 14:26:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DOUBLE] - [3434.34]
+2018-Jul-12 14:26:47 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [INTEGER] - [27]
+2018-Jul-12 14:29:44 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:30:19 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table cogdb.Employee 
+       add column noticePeriod integer
+2018-Jul-12 14:30:19 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table cogdb.Employee 
+       add column salary double precision
+2018-Jul-12 14:30:19 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:30:19 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:30:19 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:30:19 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee
+        (name, noticePeriod, salary, EMP_TYPE, id) 
+    values
+        (?, ?, ?, '2', ?)
+2018-Jul-12 14:30:19 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [John]
+2018-Jul-12 14:30:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [3]
+2018-Jul-12 14:30:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DOUBLE] - [34343.33]
+2018-Jul-12 14:30:20 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [INTEGER] - [28]
+2018-Jul-12 14:34:16 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table ContractEmployee (
+       id integer not null,
+        name varchar(255),
+        duration integer not null,
+        payPerHour double precision not null,
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-12 14:34:16 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table RegularEmployee (
+       id integer not null,
+        name varchar(255),
+        noticePeriod integer not null,
+        salary double precision not null,
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-12 14:34:16 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:34:16 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:34:16 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:34:16 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-12 14:34:16 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Priya]
+2018-Jul-12 14:34:16 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [29]
+2018-Jul-12 14:35:11 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table Employee (
+       id integer not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-12 14:35:11 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:35:12 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:35:12 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:35:12 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-12 14:35:12 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Priya]
+2018-Jul-12 14:35:12 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [30]
+2018-Jul-12 14:36:22 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:36:23 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:36:23 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:36:23 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ContractEmployee
+        (name, duration, payPerHour, id) 
+    values
+        (?, ?, ?, ?)
+2018-Jul-12 14:36:23 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Ravi]
+2018-Jul-12 14:36:23 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [12]
+2018-Jul-12 14:36:23 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DOUBLE] - [3434.34]
+2018-Jul-12 14:36:23 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [INTEGER] - [31]
+2018-Jul-12 14:36:23 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:36:23 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:36:23 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        RegularEmployee
+        (name, noticePeriod, salary, id) 
+    values
+        (?, ?, ?, ?)
+2018-Jul-12 14:36:23 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [John]
+2018-Jul-12 14:36:23 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [3]
+2018-Jul-12 14:36:23 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [DOUBLE] - [34343.33]
+2018-Jul-12 14:36:23 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [INTEGER] - [32]
+2018-Jul-12 14:40:25 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:40:25 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table ContractEmployee 
+       add constraint FKcbufbl0rlcua6mgtfj8kimr20 
+       foreign key (id) 
+       references Employee (id)
+2018-Jul-12 14:40:25 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table RegularEmployee 
+       add constraint FK47cttmcv4lmbr7ag8yxkj43mm 
+       foreign key (id) 
+       references Employee (id)
+2018-Jul-12 14:40:26 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:40:26 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:40:26 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-12 14:40:26 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Priya]
+2018-Jul-12 14:40:26 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [33]
+2018-Jul-12 14:42:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table ContractEmployee (
+       duration integer not null,
+        payPerHour double precision not null,
+        id integer not null,
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-12 14:42:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table Employee (
+       id integer not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-12 14:42:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    create table RegularEmployee (
+       noticePeriod integer not null,
+        salary double precision not null,
+        id integer not null,
+        primary key (id)
+    ) engine=MyISAM
+2018-Jul-12 14:42:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:42:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table ContractEmployee 
+       add constraint FKcbufbl0rlcua6mgtfj8kimr20 
+       foreign key (id) 
+       references Employee (id)
+2018-Jul-12 14:42:05 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table RegularEmployee 
+       add constraint FK47cttmcv4lmbr7ag8yxkj43mm 
+       foreign key (id) 
+       references Employee (id)
+2018-Jul-12 14:42:06 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:42:06 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:42:06 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-12 14:42:06 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [John]
+2018-Jul-12 14:42:06 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [34]
+2018-Jul-12 14:42:06 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        RegularEmployee
+        (noticePeriod, salary, id) 
+    values
+        (?, ?, ?)
+2018-Jul-12 14:42:06 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [3]
+2018-Jul-12 14:42:06 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [DOUBLE] - [34343.33]
+2018-Jul-12 14:42:06 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [34]
+2018-Jul-12 14:42:54 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Jul-12 14:42:55 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table ContractEmployee 
+       add constraint FKcbufbl0rlcua6mgtfj8kimr20 
+       foreign key (id) 
+       references Employee (id)
+2018-Jul-12 14:42:55 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table RegularEmployee 
+       add constraint FK47cttmcv4lmbr7ag8yxkj43mm 
+       foreign key (id) 
+       references Employee (id)
+2018-Jul-12 14:42:55 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2018-Jul-12 14:42:55 PM [main] DEBUG org.hibernate.SQL - 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2018-Jul-12 14:42:55 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Employee
+        (name, id) 
+    values
+        (?, ?)
+2018-Jul-12 14:42:55 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Ravi]
+2018-Jul-12 14:42:55 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [35]
+2018-Jul-12 14:42:55 PM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        ContractEmployee
+        (duration, payPerHour, id) 
+    values
+        (?, ?, ?)
+2018-Jul-12 14:42:55 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [12]
+2018-Jul-12 14:42:55 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [DOUBLE] - [3434.34]
+2018-Jul-12 14:42:55 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [35]

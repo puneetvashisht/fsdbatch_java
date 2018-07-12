@@ -31,6 +31,10 @@
 		<mapping class="com.cts.entities.Address" />
 		<mapping class="com.cts.entities.BankUser" />
 		<mapping class="com.cts.entities.CompositeKey" />
+		
+		<mapping class="com.cts.inherit.entities.Employee" />
+		<mapping class="com.cts.inherit.entities.ContractEmployee" />
+		<mapping class="com.cts.inherit.entities.RegularEmployee" />
 	</session-factory>
 	
 	
