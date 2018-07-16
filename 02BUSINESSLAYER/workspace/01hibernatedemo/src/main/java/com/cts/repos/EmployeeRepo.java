@@ -38,6 +38,8 @@ public class EmployeeRepo {
 
 	public Employee findEmployee(int id) {
 		// Physical connection to perform db operations
+		
+		//EntityManager
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		

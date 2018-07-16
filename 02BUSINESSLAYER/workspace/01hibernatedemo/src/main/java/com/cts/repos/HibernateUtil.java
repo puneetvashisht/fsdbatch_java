@@ -8,6 +8,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
+	//JPA's EntityManagerFactory
 	private static final SessionFactory sessionFactory;
 
 	private static ServiceRegistry serviceRegistry;
