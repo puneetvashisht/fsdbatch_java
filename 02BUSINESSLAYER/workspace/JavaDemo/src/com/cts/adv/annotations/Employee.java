@@ -8,6 +8,12 @@ public class Employee {
 	@Author(name="Ravi", email="ravi@gmail.com", type=Type.PERMANENT)
 	public String name;
 	
+	@Author(name="Ravi", email="ravi@gmail.com", type=Type.PERMANENT)
+	public Double salary;
+	
+	@Author(name="Priya", email="priya@gmail.com", type=Type.PERMANENT)
+	public int age;
+	
 	
 
 	public String getName() {
