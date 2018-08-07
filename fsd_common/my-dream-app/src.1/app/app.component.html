@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<p>
+ Hi
+</p>
+<template>
+  <p>
+    How are you?
+  </p>
+</template>
+<p>
+  I'm fine here
+ </p>
+
+
+ <p *ngIf="condition">
+   Template content for ngIf
+ </p>
+
+ <p *appUnless="condition">
+   Template content for appUnless
+</p>
+
+<button (click)="toggleCondition()"> Toggle Condition </button>
+{{condition}}
+
+

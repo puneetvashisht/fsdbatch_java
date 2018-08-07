@@ -1,0 +1,19 @@
+<h1>App Component</h1>
+
+<!-- 
+<div [ngClass]="condition?'green':'blue'">
+</div>
+<button (click)="toggleCondition()">Toggle Condition</button> -->
+
+<input type="radio" name="colors" (click)="color='orange'">
+<input type="radio" name="colors" (click)="color='cyan'">
+<input type="radio" name="colors" (click)="color='blue'">
+
+<p [appHighlight]="color">Some content here</p>
+
+<h2>Click Image</h2>
+<div class="container">
+  <img appToggle src="http://lorempixel.com/200/200/sports/" alt="Sports Image"/>
+</div>
+
+
