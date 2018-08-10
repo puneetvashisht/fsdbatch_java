@@ -3080,3 +3080,31 @@
 2018-Jul-12 15:41:36 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [INTEGER] - [1]
 2018-Jul-12 15:41:36 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [INTEGER] - [40]
 2018-Jul-12 15:41:36 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [INTEGER] - [0]
+2018-Aug-09 15:21:43 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table Address 
+       add constraint FK426odm5man561gblevdcnviyw 
+       foreign key (employee_id) 
+       references Employee_1 (id)
+2018-Aug-09 15:21:43 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table ContractEmployee 
+       add constraint FKcbufbl0rlcua6mgtfj8kimr20 
+       foreign key (id) 
+       references Employee (id)
+2018-Aug-09 15:21:43 PM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table RegularEmployee 
+       add constraint FK47cttmcv4lmbr7ag8yxkj43mm 
+       foreign key (id) 
+       references Employee (id)
+2018-Aug-09 15:21:43 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_4_0_,
+        employee0_.name as name2_4_0_,
+        employee0_.versionId as versionI3_4_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Aug-09 15:21:43 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
