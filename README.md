@@ -277,6 +277,17 @@
                 META-INF -> persistence.xml
 
 
+
+    Docker
+        1. Install docker or use an existing installation on Remote VM
+        2. Application with Dockerfile, 
+        3. Create a Docker Build -> docker build . -t name:tag
+        4. Run a docker build
+
+        1. From repository pull any software -> docker pull <image_name>
+        2. See run instructions for that software -> docker run name:tag --option
+
+
             
 
 
