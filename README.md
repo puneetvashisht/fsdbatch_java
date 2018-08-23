@@ -287,6 +287,29 @@
         1. From repository pull any software -> docker pull <image_name>
         2. See run instructions for that software -> docker run name:tag --option
 
+    
+    Steps to Deploy Image from Docker to Openshift
+        1. Create a Docker Build -> docker build . -t name:tag
+        2. Run a docker build
+        3. Docker push --> docker hub repository
+        ---- Openshift/Cloud ------
+        4. Install command line utilities from Openshift/Any other cloud
+        5. oc new-app --docker-image <docker-image:tag>
+        6. oc expose svc/myapp
+        7. oc get route/myapp
+
+    App
+        Spring Boot, JPA, Web
+        Angular  Integration -- copy dist folder to webapp in spring project
+        Create a docker file
+        create a build
+        push to docker hub
+        pull your image from docker hub to any cloud/openshift
+
+
+
+    
+
 
             
 
